@@ -1,0 +1,36 @@
+# 依赖
+node_modules/
+
+# 构建产物（由 pnpm build / tsdown 生成）
+# 注意：前导 / 必须保留——否则 "client/" 会连 src/client/ 一起匹配掉
+/lib/
+/client/
+/dist/
+/build/
+
+# 立绘形象资源：不随仓库分发，使用者请自备图片放至 assets/xiaojing.png
+assets/
+# 说明：src/client/art.generated.ts 由该图生成，但**刻意纳入版本控制**——
+# 仓库内提交的是 1x1 透明占位版，保证 clone 后无图也能编译通过；
+# 使用者自备图片后运行 scripts/embed-art.mjs 会用真图覆盖它（届时本地改动无需提交）。
+
+# 环境与密钥
+.env
+.env.*
+*.key
+*.pem
+
+# 数据库与日志
+*.db
+*.log
+
+# Python（assets/ 下的抠图脚本可能产生）
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 编辑器 / 系统
+.DS_Store
+.idea/
+.vscode/

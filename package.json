@@ -1,0 +1,47 @@
+{
+  "name": "@xiaojing/dsh-client-ui-pet-xiaojing",
+  "description": "小鲸桌面宠物：DSH Web 控制终端右下角的互动鲸鱼娘（浮动/尾巴摆/眨眼/点击气泡/可拖动）",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.mjs",
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "art:embed": "node scripts/embed-art.mjs",
+    "build": "tsdown src/index.ts src/client/index.ts --format esm --out-dir lib --no-dts && node scripts/normalize-client-banner.mjs",
+    "watch": "tsdown src/index.ts src/client/index.ts --format esm --out-dir lib --no-dts --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@tsdown/css": "^0.23.0",
+    "tsdown": "^0.22.2",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "src",
+    "assets",
+    "scripts",
+    "README.md"
+  ]
+}

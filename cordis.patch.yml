@@ -1,0 +1,4 @@
+# 小鲸桌面宠物 bundle patch：把它的 dsh.client 行插入 web 插件名册。
+- insert:
+    - id: ui-pet-xiaojing
+      name: '@xiaojing/dsh-client-ui-pet-xiaojing'
